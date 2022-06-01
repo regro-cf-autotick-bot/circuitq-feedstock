@@ -1,5 +1,5 @@
 {% set name = "circuitq" %}
-{% set version = "1.1.0" %}
+{% set version = "1.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 7c87ae3099b58e957c35ab77c294304fd3b356e2e470d2bbb356d357adc83ea8
+  sha256: f2461080859280c53c5b879fe0ce3ed804cd1a03a1d11727f623437ac4a1f65d
 
 build:
   number: 0
