@@ -6,27 +6,29 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: f2461080859280c53c5b879fe0ce3ed804cd1a03a1d11727f623437ac4a1f65d
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
 
   run:
     - networkx
     - numpy
-    - python >=3.6
+    - python >={{ python_min }}
     - scipy
     - sympy
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - circuitq
 
